@@ -1,7 +1,3 @@
-/*------Constants------*/
-
-
-
 /*------Variables (state)------*/
 
 // Variables might include (board/turn/winner)
@@ -24,17 +20,14 @@ var gameStatus = document.getElementById('message');
 document.querySelector('.board').addEventListener('click', onClick)
 /*------Functions------*/
 init();
-
-
 // Some functions you might choose to use:
-
 // Initialization function:
 // Where you set your initial state, setting up 
 // what the board will look like upon loading
 function init() {
     board = ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'];
     turn = 1;
-    gameStatus.textContent = "It is X's turn";
+    gameStatus.textContent = "X's turn";
  };
 // On-Click function:
 // Set up what happens when one of the elements
@@ -42,11 +35,9 @@ function init() {
 function onClick(e) {
     let squareIdx = parseInt(e.target.id.replace('sq',''));
     if (board[squareIdx] !== 'null') return;
-    console.log('yes');
     getWinner();
     render(squareIdx);
 };
-
 // Check winner function:
 // Checks the current state of the board for
 // a winner and changes the state of the winner
@@ -76,17 +67,16 @@ function render(squareIdx){
         board[squareIdx] = turn;
     if (turn === 1) {
         setLetter.textContent = "X";
-        gameStatus.textContent = "It is O's turn"
+        gameStatus.textContent = "O's turn"
     }else {
         setLetter.textContent = "O";
-        gameStatus.textContent = "It is X's turn"
+        gameStatus.textContent = " X's turn"
     }
     }
     turn *= -1;
     getWinner();
     Count++;
-
     if (Count === 10 && isWinner === false){
-        gameStatus.textContent = "This game is a draw";
+        gameStatus.textContent = "Draw!";
     }
 }

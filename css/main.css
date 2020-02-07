@@ -2,6 +2,10 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
 }
 
 section.board {
@@ -9,6 +13,7 @@ section.board {
     grid-template-rows: repeat(3, 10vmin);
     grid-template-columns: repeat(3, 10vmin);
     grid-gap: 0vmin;
+    background-color: purple;
 }
 
 div {
