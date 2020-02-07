@@ -27,7 +27,7 @@ init();
 function init() {
     board = ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'];
     turn = 1;
-    gameStatus.textContent = "X's turn";
+    gameStatus.textContent = "It's X's turn";
  };
 // On-Click function:
 // Set up what happens when one of the elements
@@ -67,10 +67,10 @@ function render(squareIdx){
         board[squareIdx] = turn;
     if (turn === 1) {
         setLetter.textContent = "X";
-        gameStatus.textContent = "O's turn"
+        gameStatus.textContent = "It's O's turn"
     }else {
         setLetter.textContent = "O";
-        gameStatus.textContent = " X's turn"
+        gameStatus.textContent = "It's X's turn"
     }
     }
     turn *= -1;
